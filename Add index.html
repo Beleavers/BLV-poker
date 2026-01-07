@@ -5,27 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BLV Poker</title>
 
-  <meta name="description" content="BLV Poker is a discipline-driven poker and Web3 community built on Algorand. BLV is used to reward players for participation and performance." />
-
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #eaeaea;
-      scroll-behavior: smooth;
+      background: radial-gradient(circle at top, #0b2e1a, #050505);
+      color: #ffffff;
+      line-height: 1.7;
     }
 
     a {
-      color: #f5c97a;
+      color: #00ff88;
       text-decoration: none;
       font-weight: bold;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
     }
 
     header {
@@ -33,188 +25,222 @@
       padding: 80px 20px;
     }
 
-    header img {
-      width: 160px;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
+    h1 {
       font-size: 44px;
-      color: #f5c97a;
+      color: #00ff88;
       margin-bottom: 15px;
     }
 
-    header p {
-      font-size: 18px;
-      color: #ccc;
-      max-width: 720px;
+    h2 {
+      color: #00ff88;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #d0d0d0;
+      max-width: 900px;
       margin: auto;
     }
 
-    .buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
+    .buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 14px 26px;
-      background: #f5c97a;
+      padding: 14px 28px;
+      background: #00ff88;
       color: #000;
       border-radius: 8px;
-      font-size: 16px;
     }
 
     section {
-      border-top: 1px solid #222;
-    }
-
-    h2 {
-      color: #f5c97a;
-      font-size: 30px;
-      margin-bottom: 20px;
+      padding: 70px 20px;
+      border-top: 1px solid #1e1e1e;
+      text-align: center;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
+      max-width: 1100px;
+      margin: 40px auto 0;
     }
 
     .card {
-      background: #141414;
-      padding: 20px;
-      border-radius: 10px;
+      background: #111;
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      text-align: left;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 35px;
       font-size: 14px;
-      color: #777;
-      border-top: 1px solid #222;
+      color: #aaa;
+      border-top: 1px solid #1e1e1e;
+    }
+
+    .coming {
+      background: #00ff88;
+      color: #000;
+      padding: 10px 18px;
+      display: inline-block;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header>
-    <img src="blv.png" alt="BLV Poker Logo" />
-    <h1>BLV Poker</h1>
-    <p>
-      A discipline-driven poker community built for long-term thinkers.
-      Strategy, consistency, and smart decision-making — not luck.
-    </p>
+<header>
+  <h1>BLV Poker</h1>
+  <p>
+    BLV Poker is a global, community-first poker project built on discipline,
+    strategy, and long-term thinking.
+    No hype. No rush. Just poker.
+  </p>
 
-    <div class="buttons">
-      <a href="#tokenomics" class="btn">View Tokenomics</a>
-      <a href="#community" class="btn">Join Community</a>
+  <div class="buttons">
+    <a href="#about">About</a>
+    <a href="#believers">Believers</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#buy">Buy $BLV</a>
+    <a href="#community">Community</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>What is BLV Poker?</h2>
+  <p>
+    BLV Poker is a private poker community for players around the world.
+    We focus on fair play, consistency, and respect.
+    BLV Poker is open to all countries and cultures.
+  </p>
+</section>
+
+<section id="believers">
+  <h2>Who Are the Believers?</h2>
+  <p>
+    Believers are the people behind BLV Poker.
+    A Believer believes in process over shortcuts.
+  </p>
+  <p style="margin-top:15px;">
+    Believers value discipline over luck,
+    learning over ego,
+    and long-term growth over quick wins.
+  </p>
+</section>
+
+<section id="token">
+  <h2>BLV Token</h2>
+
+  <div class="cards">
+    <div class="card">
+      <strong>Name:</strong> BLV Poker<br />
+      <strong>Symbol:</strong> BLV<br />
+      <strong>Blockchain:</strong> Algorand<br />
+      <strong>Total Supply:</strong> 1,000,000,000<br />
+      <strong>Decimals:</strong> 6
     </div>
-  </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <h2>What is BLV Poker?</h2>
-      <p>
-        BLV Poker is a private poker ecosystem focused on discipline,
-        bankroll management, and calculated gameplay.
-        Built for grinders, believers, and players who value
-        long-term edge over short-term luck.
-      </p>
+    <div class="card">
+      <strong>Token Purpose</strong><br /><br />
+      BLV is used to reward poker players for participation,
+      tournaments, performance, and positive contribution.
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TOKENOMICS -->
-  <section id="tokenomics">
-    <div class="container">
-      <h2>Tokenomics</h2>
+<section id="roadmap">
+  <h2>Roadmap</h2>
 
-      <div class="cards">
-        <div class="card"><strong>Token Name:</strong> BLV Poker</div>
-        <div class="card"><strong>Symbol:</strong> BLV</div>
-        <div class="card"><strong>Blockchain:</strong> Algorand</div>
-        <div class="card"><strong>Total Supply:</strong> 1,000,000,000 BLV</div>
-        <div class="card"><strong>Decimals:</strong> 6</div>
-
-        <div class="card">
-          <strong>Utility:</strong><br />
-          BLV is used to reward players for gameplay,
-          tournament participation, performance,
-          and long-term contribution to the BLV Poker ecosystem.
-        </div>
-      </div>
+  <div class="cards">
+    <div class="card">
+      <strong>Phase 1 — Foundation</strong><br /><br />
+      • Build community<br />
+      • Launch website<br />
+      • Start ClubGG games
     </div>
-  </section>
 
-  <!-- ROADMAP -->
-  <section id="roadmap">
-    <div class="container">
-      <h2>Roadmap</h2>
-
-      <div class="cards">
-        <div class="card">
-          <strong>Phase 1 – Foundation</strong><br />
-          ClubGG setup, branding, early community.
-        </div>
-
-        <div class="card">
-          <strong>Phase 2 – Growth</strong><br />
-          Tournaments, player rewards, content.
-        </div>
-
-        <div class="card">
-          <strong>Phase 3 – Utility</strong><br />
-          Token rewards, premium access, partnerships.
-        </div>
-      </div>
+    <div class="card">
+      <strong>Phase 2 — Growth</strong><br /><br />
+      • Regular poker events<br />
+      • Player rewards<br />
+      • Introduce BLV NFT<br />
+      • Community expansion
     </div>
-  </section>
 
-  <!-- COMMUNITY -->
-  <section id="community">
-    <div class="container">
-      <h2>Community & Links</h2>
-
-      <div class="cards">
-        <div class="card">
-          <strong>Discord</strong><br />
-          <a href="https://discord.gg/zBe5bteBR" target="_blank">
-            Join Discord
-          </a>
-        </div>
-
-        <div class="card">
-          <strong>X (Twitter)</strong><br />
-          <a href="https://x.com/believers1pk" target="_blank">
-            @believers1pk
-          </a>
-        </div>
-
-        <div class="card">
-          <strong>ClubGG Club ID</strong><br />
-          101286
-        </div>
-
-        <div class="card">
-          <strong>Join ClubGG</strong><br />
-          <a href="https://clubgg.app.link/FYG7kYLr1Yb" target="_blank">
-            Main Club Link
-          </a><br /><br />
-          <a href="https://clubgg.app.link/nTUWWxQr1Yb" target="_blank">
-            Backup Club Link
-          </a>
-        </div>
-      </div>
+    <div class="card">
+      <strong>Phase 3 — Utility</strong><br /><br />
+      • Advanced tournaments<br />
+      • BLV incentives<br />
+      • Explore BLV Poker App
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 BLV Poker · Discipline Over Luck
-  </footer>
+<section id="buy">
+  <h2>Buy $BLV</h2>
+  <p>
+    BLV is not available for purchase yet.
+    We are focused on building the community first.
+  </p>
+  <div class="coming">Buy $BLV — Coming Soon</div>
+</section>
+
+<section id="clubgg">
+  <h2>How to Join BLV Poker (ClubGG)</h2>
+
+  <div class="cards">
+    <div class="card">
+      Download CLUBGG from the App Store or Google Play.
+    </div>
+
+    <div class="card">
+      Create an account and finish setup.
+    </div>
+
+    <div class="card">
+      Search for Club ID:<br />
+      <strong>101286</strong>
+    </div>
+
+    <div class="card">
+      Join the club and start playing poker.
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <h2>Community & Links</h2>
+
+  <div class="cards">
+    <div class="card">
+      <a href="https://t.me/+JSxQoAv8exoyZmY0" target="_blank">
+        Telegram
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://x.com/believers1pk" target="_blank">
+        X (Twitter)
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://discord.gg/zBe5bteBR" target="_blank">
+        Discord
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 BLV Poker · Believers Community · Discipline Over Luck
+</footer>
 
 </body>
 </html>
