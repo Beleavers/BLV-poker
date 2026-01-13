@@ -1,224 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>BLV Poker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>BLV Poker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #001a0f, #000);
-      color: #fff;
-      line-height: 1.6;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(180deg,#020b07,#000);
+  color:#fff;
+}
+a{color:#00ff88;text-decoration:none;font-weight:bold;}
 
-    a {
-      color: #00ff88;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.top{
+  position:fixed;top:0;left:0;right:0;
+  height:55px;background:#000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;border-bottom:1px solid #111;z-index:1000;
+}
+.logo{color:#00ff88;font-size:20px;font-weight:bold;}
+.menu-btn{cursor:pointer;font-size:26px;}
 
-    /* Top bar */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 50px;
-      background: #000;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 0 15px;
-      z-index: 1000;
-      border-bottom: 1px solid #111;
-    }
+.dropdown{
+  position:fixed;top:60px;right:15px;
+  background:#050f0a;border:1px solid #00ff88;
+  border-radius:10px;display:none;min-width:220px;
+}
+.dropdown div{
+  padding:12px 15px;border-bottom:1px solid #0f2f1e;
+}
+.dropdown div:last-child{border:none;}
 
-    .dots {
-      font-size: 28px;
-      cursor: pointer;
-      user-select: none;
-    }
+section{
+  padding:90px 20px;border-bottom:1px solid #111;text-align:center;
+}
+h1{color:#00ff88;font-size:46px;margin-bottom:10px;}
+h2{color:#00ff88;margin-bottom:10px;}
+p{max-width:900px;margin:auto;color:#ddd;line-height:1.7;}
 
-    .menu {
-      position: fixed;
-      top: 55px;
-      right: 15px;
-      background: #050f0a;
-      border: 1px solid #00ff88;
-      border-radius: 8px;
-      padding: 10px 0;
-      display: none;
-      min-width: 200px;
-      z-index: 1001;
-    }
+.btn{
+  display:inline-block;margin:10px;padding:14px 26px;
+  background:#00ff88;color:#000;font-weight:bold;
+  border-radius:8px;
+}
 
-    .menu div {
-      padding: 10px 15px;
-      color: #00ff88;
-    }
+.grid{
+  max-width:1000px;margin:40px auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
 
-    header {
-      text-align: center;
-      padding: 120px 20px 90px;
-    }
+.card{
+  background:#060f0a;border:1px solid #0f2f1e;
+  padding:22px;border-radius:14px;text-align:left;
+}
 
-    h1 {
-      color: #00ff88;
-      font-size: 44px;
-      margin-bottom: 10px;
-    }
+input{
+  width:100%;padding:10px;margin-top:8px;
+  border-radius:6px;border:none;
+}
 
-    h2 {
-      color: #00ff88;
-      margin-bottom: 10px;
-    }
+.badge{
+  background:#00ff88;color:#000;
+  padding:6px 12px;border-radius:20px;font-size:12px;
+}
 
-    p {
-      color: #ddd;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      margin: 8px;
-      padding: 14px 28px;
-      background: #00ff88;
-      color: #000;
-      font-weight: bold;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 60px 20px;
-      border-top: 1px solid #111;
-      text-align: center;
-    }
-
-    .box {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+.footer{
+  text-align:center;padding:30px;font-size:14px;color:#777;
+}
+</style>
 </head>
+
 <body>
 
-<!-- Top bar with 3 dots -->
-<div class="topbar">
-  <div class="dots" onclick="toggleMenu()">⋮</div>
+<div class="top">
+  <div class="logo">BLV Poker</div>
+  <div class="menu-btn" onclick="toggle()">⋮</div>
 </div>
 
-<!-- 3-dot menu -->
-<div class="menu" id="menu">
-  <div>Buy $BLV — Coming Soon</div>
-  <div>
-    Wallets:
-    <div style="font-size:14px; color:#ccc; margin-top:6px;">
-      • Pera Wallet<br>
-      • Defly Wallet
-    </div>
-  </div>
+<div class="dropdown" id="drop">
+  <div><strong>Buy $BLV</strong><br><span class="badge">Coming Soon</span></div>
+  <div><strong>Wallets</strong><br>Pera Wallet<br>Defly Wallet</div>
 </div>
 
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  }
+function toggle(){
+  const d=document.getElementById("drop");
+  d.style.display=d.style.display==="block"?"none":"block";
+}
 </script>
 
-<header>
+<section>
   <h1>BLV Poker</h1>
-  <p>A discipline-driven poker community built for players who value strategy, patience, and long-term growth.</p>
-  <div>
-    <a class="btn" href="#tokenomics">Tokenomics</a>
-    <a class="btn" href="#community">Join Community</a>
-  </div>
-</header>
-
-<section>
-  <div class="box">
-    <h2>What is BLV Poker?</h2>
-    <p>
-      BLV Poker is a community-first poker ecosystem built around discipline,
-      fair play, and long-term thinking.
-      BLV is a reward token used to support players, tournaments, and community growth.
-    </p>
-  </div>
+  <p>
+    A long-term poker & Web3 community built on discipline,
+    strategy, and consistency — not hype.
+  </p>
+  <a class="btn" href="#tasks">Daily Tasks</a>
+  <a class="btn" href="#leaderboard">Leaderboard</a>
 </section>
 
 <section>
-  <div class="box">
-    <h2>Who Are Believers?</h2>
-    <p>
-      Believers choose discipline over hype, strategy over luck, and patience over greed.
-    </p>
-    <p>
-      poker GUY 👊🏿♥️<br>
-      Web3 Creator 🧠 | Ambassador & Community Builder<br>
-      Crypto Threads • Airdrops • Alpha
-    </p>
+  <h2>What is BLV Poker?</h2>
+  <p>
+    BLV Poker is a community-first ecosystem.
+    Contributors earn <strong>BLV Points</strong> for participation.
+    These points will later be redeemable for $BLV.
+  </p>
+</section>
+
+<section>
+  <h2>Who Are the Believers?</h2>
+  <p>
+    Believers focus on long-term gains, not quick profits.
+    Discipline over hype. Process over luck.
+  </p>
+  <p style="margin-top:15px;">
+    poker GUY 👊🏿♥️<br>
+    Web3 Creator 🧠 | Ambassador & Community Builder<br>
+    Crypto Threads • Airdrops • Alpha
+  </p>
+</section>
+
+<section id="tasks">
+  <h2>Daily BLV Tasks</h2>
+  <p>
+    Tasks reset daily. Points are counted manually for now.
+    Only participate if you believe in long-term growth.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <strong>🐦 Post on X (Twitter)</strong><br><br>
+      • Post about BLV Poker<br>
+      • Include $BLV or #BLVPoker<br>
+      • Earn points daily
+      <br><br>
+      <strong>Paste Tweet Link:</strong>
+      <input type="text" placeholder="https://x.com/yourtweet">
+    </div>
+
+    <div class="card">
+      <strong>💬 Discord Activity</strong><br><br>
+      • Chat daily<br>
+      • Help newcomers<br>
+      • Earn repeatable points
+    </div>
+
+    <div class="card">
+      <strong>👥 Community Growth</strong><br><br>
+      • Invite new members<br>
+      • Long-term contributors get bonuses
+    </div>
   </div>
 </section>
 
-<section id="tokenomics">
-  <div class="box">
-    <h2>BLV Tokenomics</h2>
-    <p><strong>Name:</strong> BLV Poker</p>
-    <p><strong>Symbol:</strong> BLV</p>
-    <p><strong>Use:</strong> Reward players, tournaments, community growth</p>
-    <p><strong>Status:</strong> Buy $BLV — Coming Soon</p>
+<section id="leaderboard">
+  <h2>BLV Points Leaderboard</h2>
+  <p>
+    Leaderboard updates regularly.
+    Transparency builds trust.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      🥇 Wallet / Username<br>
+      <strong>1,250 BLV Points</strong>
+    </div>
+
+    <div class="card">
+      🥈 Wallet / Username<br>
+      <strong>980 BLV Points</strong>
+    </div>
+
+    <div class="card">
+      🥉 Wallet / Username<br>
+      <strong>740 BLV Points</strong>
+    </div>
   </div>
 </section>
 
 <section>
-  <div class="box">
-    <h2>Roadmap</h2>
-    <p><strong>Phase 1:</strong> Community building & poker clubs</p>
-    <p><strong>Phase 2:</strong> BLV rewards & tournaments</p>
-    <p><strong>Phase 3:</strong> BLV Poker App</p>
-    <p><strong>Phase 4:</strong> BLV NFT introduction</p>
-  </div>
+  <h2>Important Notice</h2>
+  <p>
+    BLV Poker is strictly for people interested in
+    <strong>long-term participation</strong>.
+  </p>
+  <p style="margin-top:10px;">
+    If you are here for quick flips,
+    this project is not for you.
+  </p>
 </section>
 
 <section>
-  <div class="box">
-    <h2>Join Our Poker Club</h2>
-    <p>1. Download ClubGG</p>
-    <p>2. Create your account</p>
-    <p>3. Search Club ID: <strong>101286</strong></p>
-    <p>4. Join and play</p>
-  </div>
+  <h2>Roadmap</h2>
+  <p>Phase 1 — Community & Poker Clubs</p>
+  <p>Phase 2 — BLV Points System</p>
+  <p>Phase 3 — $BLV Utility</p>
+  <p>Phase 4 — BLV NFT</p>
+  <p>Phase 5 — BLV Poker App</p>
 </section>
 
-<section id="community">
-  <div class="box">
-    <h2>Community & Links</h2>
-    <p>
-      Telegram:
-      <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0" target="_blank">Join</a><br>
-      X (Twitter):
-      <a class="btn" href="https://x.com/believers1pk?s=21" target="_blank">Follow</a><br>
-      Discord:
-      <a class="btn" href="https://discord.gg/mXsUNsJvhk" target="_blank">Join</a>
-    </p>
-  </div>
+<section>
+  <h2>Join BLV Poker Club</h2>
+  <p>Download ClubGG</p>
+  <p>Create an account</p>
+  <p>Search Club ID: <strong>101286</strong></p>
+  <p>Join and start playing</p>
 </section>
 
-<footer>
-  © 2025 BLV Poker — Built by Believers
-</footer>
+<section>
+  <h2>Community</h2>
+  <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0" target="_blank">Telegram</a>
+  <a class="btn" href="https://x.com/believers1pk?s=21" target="_blank">X</a>
+  <a class="btn" href="https://discord.gg/mXsUNsJvhk" target="_blank">Discord</a>
+</section>
+
+<div class="footer">
+  © 2025 BLV Poker · Built by Believers · Long-Term Only
+</div>
 
 </body>
 </html>
