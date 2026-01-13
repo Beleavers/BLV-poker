@@ -15,6 +15,19 @@ body{
 a{color:#00ff88;text-decoration:none;font-weight:bold;}
 h1,h2{color:#00ff88;}
 section{padding:90px 20px;border-bottom:1px solid #111;text-align:center;}
+.hidden{display:none;}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:14px 26px;
+  background:#00ff88;
+  color:#000;
+  font-weight:bold;
+  border-radius:8px;
+  cursor:pointer;
+}
+
 .top{
   position:fixed;top:0;left:0;right:0;height:55px;
   background:#000;display:flex;align-items:center;
@@ -23,6 +36,7 @@ section{padding:90px 20px;border-bottom:1px solid #111;text-align:center;}
 }
 .logo{font-size:20px;font-weight:bold;color:#00ff88;}
 .menu{cursor:pointer;font-size:26px;}
+
 .dropdown{
   position:fixed;top:60px;right:15px;
   background:#050f0a;border:1px solid #00ff88;
@@ -31,18 +45,11 @@ section{padding:90px 20px;border-bottom:1px solid #111;text-align:center;}
 .dropdown div{padding:12px;border-bottom:1px solid #0f2f1e;}
 .dropdown div:last-child{border:none;}
 
-.btn{
-  display:inline-block;margin:10px;padding:14px 26px;
-  background:#00ff88;color:#000;font-weight:bold;
-  border-radius:8px;
-}
-
 .grid{
   max-width:1000px;margin:40px auto;
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
 }
-
 .card{
   background:#060f0a;border:1px solid #0f2f1e;
   padding:22px;border-radius:14px;text-align:left;
@@ -64,117 +71,98 @@ input{
 
 <body>
 
+<!-- BELIEVER GATE -->
+<section id="gate">
+  <h1>Are you a BELIEVER?</h1>
+  <p>BLV Poker is built for long-term thinkers only.</p>
+  <div class="btn" onclick="enterSite()">YES</div>
+  <div class="btn" onclick="reject()">NO</div>
+</section>
+
+<section id="reject" class="hidden">
+  <h2>This isn’t for everyone.</h2>
+  <p>BLV Poker is for believers, builders, and long-term players.</p>
+</section>
+
+<!-- MAIN SITE -->
+<div id="site" class="hidden">
+
 <div class="top">
   <div class="logo">BLV Poker</div>
   <div class="menu" onclick="toggle()">⋮</div>
 </div>
 
 <div class="dropdown" id="drop">
-  <div><strong>Buy $BLV</strong><br><span class="badge">Coming Soon</span></div>
   <div><strong>Wallets</strong><br>Pera · Defly</div>
+  <div><strong>Buy $BLV</strong><br><span class="badge">Coming Soon</span></div>
 </div>
-
-<script>
-function toggle(){
-  const d=document.getElementById("drop");
-  d.style.display=d.style.display==="block"?"none":"block";
-}
-</script>
 
 <section>
   <h1>BLV Poker</h1>
-  <p>A long-term poker & Web3 community built for believers.</p>
+  <p>Long-term poker & Web3 community for believers.</p>
+  <a class="btn" href="#tasks">Join Tasks</a>
+  <a class="btn" href="#community">Join Community</a>
   <a class="btn" href="#dashboard">Dashboard</a>
-  <a class="btn" href="#tasks">Daily Tasks</a>
 </section>
 
-<section>
-  <h2>What is BLV Poker?</h2>
+<section id="about">
+  <h2>About BLV Poker</h2>
   <p>
-    BLV Poker is a community-driven ecosystem where engagement,
-    discipline, and consistency are rewarded.
-    Users earn <strong>BLV Points</strong> that will later be redeemable for $BLV.
+    BLV Poker combines real poker gameplay with Web3 community rewards.
+    Players earn BLV Points through engagement and participation,
+    redeemable for $BLV in the future.
   </p>
+</section>
+
+<section id="poker">
+  <h2>Play Poker with BLV</h2>
+  <div class="grid">
+    <div class="card">
+      <strong>How to Join</strong><br><br>
+      1️⃣ Download CLUBGG<br>
+      2️⃣ Create account<br>
+      3️⃣ Search Club ID: <strong>101286</strong><br>
+      4️⃣ Join & play
+    </div>
+    <div class="card">
+      <strong>Why Play?</strong><br><br>
+      • Compete with BLV community<br>
+      • Earn BLV Points<br>
+      • Prepare for $BLV rewards
+    </div>
+  </div>
 </section>
 
 <section id="dashboard">
   <h2>Your Dashboard</h2>
-  <p>Connect your accounts to start earning points.</p>
-
   <div class="grid">
     <div class="card">
-      <strong>🐦 Connect X (Twitter)</strong><br><br>
-      Track posts, likes & engagement related to BLV Poker.
-      <br><br>
+      <strong>Connect X</strong><br><br>
+      Track BLV-related posts<br>
       <span class="badge">Coming Soon</span>
     </div>
-
     <div class="card">
-      <strong>👛 Connect Wallet</strong><br><br>
-      Wallet connection will be enabled when $BLV launches.
-      <br><br>
-      <span class="badge">Coming Soon</span>
-    </div>
-
-    <div class="card">
-      <strong>⭐ Your BLV Points</strong><br><br>
+      <strong>Your Points</strong><br><br>
       <h2>0</h2>
-      <p>Points update after review</p>
+      Points reviewed daily
     </div>
   </div>
 </section>
 
 <section id="tasks">
   <h2>Daily Tasks</h2>
-  <p>
-    Tasks reset daily. Engagement is reviewed and points are assigned.
-    Participate only if you believe in long-term growth.
-  </p>
-
   <div class="grid">
     <div class="card">
       <strong>Post on X</strong><br><br>
-      • Tweet about BLV Poker<br>
-      • Use $BLV or #BLVPoker<br>
-      • Earn points daily
-      <br><br>
-      <strong>Paste your Tweet link:</strong>
+      Use $BLV or #BLVPoker<br><br>
+      Paste tweet link:
       <input type="text" placeholder="https://x.com/yourtweet">
-    </div>
-
-    <div class="card">
-      <strong>Discord Activity</strong><br><br>
-      • Be active<br>
-      • Help new members<br>
-      • Earn repeatable points
-    </div>
-
-    <div class="card">
-      <strong>Community Growth</strong><br><br>
-      • Invite new believers<br>
-      • Long-term contributors get bonuses
+      <div class="btn" style="margin-top:10px;">Submit for Review</div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>How Points Work</h2>
-  <p>
-    Points are tracked off-chain during Phase 1.
-    Automation will be introduced later.
-  </p>
-</section>
-
-<section>
-  <h2>Roadmap</h2>
-  <p>Phase 1 — Community & Poker Clubs</p>
-  <p>Phase 2 — BLV Points System</p>
-  <p>Phase 3 — $BLV Utility</p>
-  <p>Phase 4 — BLV NFT</p>
-  <p>Phase 5 — BLV Poker App</p>
-</section>
-
-<section>
+<section id="community">
   <h2>Join the Community</h2>
   <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0" target="_blank">Telegram</a>
   <a class="btn" href="https://x.com/believers1pk?s=21" target="_blank">X</a>
@@ -182,8 +170,25 @@ function toggle(){
 </section>
 
 <div class="footer">
-  © 2025 BLV Poker · Built for Believers · Long-Term Only
+  © 2025 BLV Poker · Built for Believers
 </div>
+
+</div>
+
+<script>
+function enterSite(){
+  document.getElementById("gate").style.display="none";
+  document.getElementById("site").style.display="block";
+}
+function reject(){
+  document.getElementById("gate").style.display="none";
+  document.getElementById("reject").style.display="block";
+}
+function toggle(){
+  const d=document.getElementById("drop");
+  d.style.display=d.style.display==="block"?"none":"block";
+}
+</script>
 
 </body>
 </html>
