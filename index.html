@@ -12,30 +12,26 @@ body{
   background:#020c08;
   color:#fff;
 }
-
-/* NAVBAR */
+a{
+  text-decoration:none;
+}
 .nav{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:15px 25px;
+  padding:15px 20px;
   background:#000;
-  border-bottom:1px solid #0f2f1e;
   position:fixed;
   width:100%;
   top:0;
+  border-bottom:1px solid #0f2f1e;
 }
 .logo{
   color:#00ff88;
   font-weight:bold;
-  font-size:20px;
 }
 .menu{
   cursor:pointer;
-  font-size:24px;
 }
-
-/* DROPDOWN */
 .dropdown{
   display:none;
   position:absolute;
@@ -43,39 +39,26 @@ body{
   top:60px;
   background:#071a12;
   border:1px solid #00ff88;
-  border-radius:10px;
-  width:200px;
 }
 .dropdown div{
   padding:15px;
-  border-bottom:1px solid #0f2f1e;
 }
-
-/* HERO */
-.hero{
-  padding-top:120px;
+section{
+  padding:100px 20px;
   text-align:center;
+  border-bottom:1px solid #111;
 }
-.hero h1{
-  font-size:42px;
+h1,h2{
   color:#00ff88;
-}
-.hero p{
-  color:#aaa;
-  max-width:600px;
-  margin:auto;
 }
 .btn{
   display:inline-block;
   margin:10px;
-  padding:14px 25px;
+  padding:12px 24px;
   background:#00ff88;
   color:#000;
-  border-radius:8px;
-  font-weight:bold;
+  border-radius:6px;
 }
-
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -86,33 +69,18 @@ body{
 .card{
   background:#071a12;
   padding:20px;
-  border-radius:12px;
-  border:1px solid #0f2f1e;
+  border-radius:10px;
 }
-
-/* SECTIONS */
-section{
-  padding:80px 20px;
+.footer{
+  padding:30px;
   text-align:center;
-  border-bottom:1px solid #111;
+  color:#777;
 }
-h2{
-  color:#00ff88;
-}
-
-/* LOGO */
 .logo-img{
   max-width:280px;
   border-radius:20px;
-  box-shadow:0 0 60px rgba(0,255,136,0.8);
   border:2px solid #00ff88;
-}
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:30px;
-  color:#666;
+  box-shadow:0 0 50px rgba(0,255,136,0.8);
 }
 </style>
 </head>
@@ -126,8 +94,8 @@ h2{
 </div>
 
 <div class="dropdown" id="drop">
-  <div>Wallets: Pera · Defly</div>
-  <div>Buy $BLV: Coming Soon</div>
+  <div>Pera Wallet · Defly Wallet</div>
+  <div>Buy $BLV (Soon)</div>
 </div>
 
 <script>
@@ -138,17 +106,17 @@ function toggle(){
 </script>
 
 <!-- HERO -->
-<div class="hero">
+<section>
   <h1>BLV Poker</h1>
   <p>
     A long-term poker ecosystem built for believers.
-    No hype. Just discipline, strategy, and growth.
   </p>
 
   <a class="btn" href="#about">About</a>
   <a class="btn" href="#roadmap">Roadmap</a>
+  <a class="btn" href="#whitepaper">Whitepaper</a>
   <a class="btn" href="#community">Join</a>
-</div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
@@ -157,24 +125,24 @@ function toggle(){
   <div class="grid">
     <div class="card">
       ♠ Poker First<br><br>
-      Built around real gameplay and competition.
+      Real gameplay and competition.
     </div>
 
     <div class="card">
       🌍 Community<br><br>
-      Strong believers building together.
+      Built by believers.
     </div>
 
     <div class="card">
       🚀 Future Token<br><br>
-      $BLV will power the ecosystem.
+      $BLV ecosystem coming.
     </div>
   </div>
 </section>
 
 <!-- PLAY -->
 <section>
-  <h2>Play with BLV</h2>
+  <h2>Play Poker</h2>
 
   <div class="grid">
     <div class="card">
@@ -184,9 +152,9 @@ function toggle(){
     </div>
 
     <div class="card">
-      Compete with players<br><br>
-      Build discipline<br><br>
-      Grow with the community
+      Compete<br><br>
+      Improve<br><br>
+      Grow with BLV
     </div>
   </div>
 </section>
@@ -203,17 +171,49 @@ function toggle(){
 
     <div class="card">
       Phase 2<br><br>
-      $BLV Token Introduction
+      $BLV Token
     </div>
 
     <div class="card">
       Phase 3<br><br>
-      BLV NFT Launch
+      BLV NFT
     </div>
 
     <div class="card">
       Phase 4<br><br>
       BLV Poker App
+    </div>
+  </div>
+</section>
+
+<!-- WHITEPAPER -->
+<section id="whitepaper">
+  <h2>Whitepaper</h2>
+
+  <p>
+    BLV Poker is a community-first ecosystem focused on long-term growth,
+    discipline, and real gameplay.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <strong>Vision</strong><br><br>
+      Build a sustainable poker platform powered by belief and consistency.
+    </div>
+
+    <div class="card">
+      <strong>$BLV Token</strong><br><br>
+      Future utility token supporting rewards and ecosystem growth.
+    </div>
+
+    <div class="card">
+      <strong>Utility</strong><br><br>
+      Poker rewards, NFTs, and community incentives.
+    </div>
+
+    <div class="card">
+      <strong>Philosophy</strong><br><br>
+      Long-term mindset over hype and quick gains.
     </div>
   </div>
 </section>
@@ -231,9 +231,7 @@ function toggle(){
 <section>
   <h2>BLV Poker</h2>
 
-  <!-- REPLACE LINK BELOW -->
-  <img class="logo-img"
-  src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/blv-logo.png">
+  <img src="blv-logo.png" class="logo-img">
 
   <p style="margin-top:20px;color:#aaa;">
     The Fire of Believers 🔥
