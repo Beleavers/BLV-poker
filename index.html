@@ -8,195 +8,241 @@
 <style>
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(180deg,#03140d,#000);
+  font-family:Arial, sans-serif;
+  background:#020c08;
   color:#fff;
 }
-a{
-  color:#00ff88;
-  text-decoration:none;
-  font-weight:bold;
-}
-h1,h2{
-  color:#00ff88;
-}
-section{
-  padding:100px 20px;
-  border-bottom:1px solid #111;
-  text-align:center;
-}
-.top{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:60px;
-  background:#000;
+
+/* NAVBAR */
+.nav{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:0 20px;
-  border-bottom:1px solid #111;
-  z-index:1000;
+  align-items:center;
+  padding:15px 25px;
+  background:#000;
+  border-bottom:1px solid #0f2f1e;
+  position:fixed;
+  width:100%;
+  top:0;
 }
 .logo{
-  font-size:20px;
-  font-weight:bold;
   color:#00ff88;
+  font-weight:bold;
+  font-size:20px;
 }
 .menu{
   cursor:pointer;
-  font-size:26px;
+  font-size:24px;
 }
+
+/* DROPDOWN */
 .dropdown{
-  position:fixed;
-  top:65px;
+  display:none;
+  position:absolute;
   right:20px;
+  top:60px;
   background:#071a12;
   border:1px solid #00ff88;
   border-radius:10px;
-  display:none;
-  min-width:220px;
+  width:200px;
 }
 .dropdown div{
   padding:15px;
   border-bottom:1px solid #0f2f1e;
 }
-.dropdown div:last-child{
-  border:none;
+
+/* HERO */
+.hero{
+  padding-top:120px;
+  text-align:center;
+}
+.hero h1{
+  font-size:42px;
+  color:#00ff88;
+}
+.hero p{
+  color:#aaa;
+  max-width:600px;
+  margin:auto;
 }
 .btn{
   display:inline-block;
   margin:10px;
-  padding:14px 28px;
+  padding:14px 25px;
   background:#00ff88;
   color:#000;
   border-radius:8px;
   font-weight:bold;
 }
+
+/* GRID */
 .grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
   max-width:1000px;
   margin:40px auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
 }
 .card{
   background:#071a12;
+  padding:20px;
+  border-radius:12px;
   border:1px solid #0f2f1e;
-  padding:25px;
-  border-radius:14px;
-  text-align:left;
 }
-.footer{
-  padding:40px;
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
   text-align:center;
-  font-size:14px;
-  color:#777;
+  border-bottom:1px solid #111;
+}
+h2{
+  color:#00ff88;
+}
+
+/* LOGO */
+.logo-img{
+  max-width:280px;
+  border-radius:20px;
+  box-shadow:0 0 60px rgba(0,255,136,0.8);
+  border:2px solid #00ff88;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:30px;
+  color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<div class="top">
+<!-- NAV -->
+<div class="nav">
   <div class="logo">BLV Poker</div>
   <div class="menu" onclick="toggle()">⋮</div>
 </div>
 
 <div class="dropdown" id="drop">
-  <div>
-    <strong>Wallets</strong><br>
-    Pera Wallet · Defly Wallet
-  </div>
-  <div>
-    <strong>Buy $BLV</strong><br>
-    Coming Soon 🔜
-  </div>
+  <div>Wallets: Pera · Defly</div>
+  <div>Buy $BLV: Coming Soon</div>
 </div>
 
 <script>
 function toggle(){
-  const d=document.getElementById("drop");
+  let d=document.getElementById("drop");
   d.style.display=d.style.display==="block"?"none":"block";
 }
 </script>
 
-<section>
+<!-- HERO -->
+<div class="hero">
   <h1>BLV Poker</h1>
   <p>
-    A long-term poker & Web3 ecosystem built for believers.
+    A long-term poker ecosystem built for believers.
+    No hype. Just discipline, strategy, and growth.
   </p>
-  <a class="btn" href="#about">About BLV</a>
+
+  <a class="btn" href="#about">About</a>
   <a class="btn" href="#roadmap">Roadmap</a>
-  <a class="btn" href="#community">Community</a>
-</section>
+  <a class="btn" href="#community">Join</a>
+</div>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2>About BLV Poker</h2>
-  <p>
-    BLV Poker is a community-driven poker ecosystem combining
-    real gameplay with Web3 innovation.
-  </p>
-  <p>
-    Built for believers. Built for long-term vision.
-  </p>
-</section>
+  <h2>About BLV</h2>
 
-<section id="roadmap">
-  <h2>Roadmap</h2>
   <div class="grid">
     <div class="card">
-      <strong>Phase 1 — Foundation</strong><br><br>
-      • Community Growth<br>
-      • Poker Club Launch<br>
-      • Website Deployment
+      ♠ Poker First<br><br>
+      Built around real gameplay and competition.
     </div>
 
     <div class="card">
-      <strong>Phase 2 — Expansion</strong><br><br>
-      • $BLV Introduction<br>
-      • Partnerships<br>
-      • Ecosystem Growth
+      🌍 Community<br><br>
+      Strong believers building together.
     </div>
 
     <div class="card">
-      <strong>Phase 3 — Utility</strong><br><br>
-      • BLV NFT Launch<br>
-      • Rewards Integration
-    </div>
-
-    <div class="card">
-      <strong>Phase 4 — BLV Poker App</strong><br><br>
-      • Dedicated Poker Platform<br>
-      • Scaling & Improvements
+      🚀 Future Token<br><br>
+      $BLV will power the ecosystem.
     </div>
   </div>
 </section>
 
-<section id="community">
-  <h2>Join the Community</h2>
-  <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0" target="_blank">Telegram</a>
-  <a class="btn" href="https://x.com/believers1pk?s=21" target="_blank">X</a>
-  <a class="btn" href="https://discord.gg/mXsUNsJvhk" target="_blank">Discord</a>
+<!-- PLAY -->
+<section>
+  <h2>Play with BLV</h2>
+
+  <div class="grid">
+    <div class="card">
+      Download CLUBGG<br><br>
+      Create account<br><br>
+      Club ID: <b>101286</b>
+    </div>
+
+    <div class="card">
+      Compete with players<br><br>
+      Build discipline<br><br>
+      Grow with the community
+    </div>
+  </div>
 </section>
 
-<!-- 🔥 SAFE LOGO SECTION -->
-<section style="padding:80px 20px;text-align:center;background:#000;">
-  <h2 style="margin-bottom:30px;">BLV Poker</h2>
+<!-- ROADMAP -->
+<section id="roadmap">
+  <h2>Roadmap</h2>
 
-  <!-- Replace the link below with your REAL image link from GitHub -->
-  <img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/blv-logo.png"
-       style="max-width:300px;width:80%;
-       border-radius:20px;
-       border:3px solid #00ff88;
-       box-shadow:0 0 60px rgba(0,255,136,0.8);">
+  <div class="grid">
+    <div class="card">
+      Phase 1<br><br>
+      Community + Poker Launch
+    </div>
 
-  <p style="margin-top:25px;color:#aaa;">
+    <div class="card">
+      Phase 2<br><br>
+      $BLV Token Introduction
+    </div>
+
+    <div class="card">
+      Phase 3<br><br>
+      BLV NFT Launch
+    </div>
+
+    <div class="card">
+      Phase 4<br><br>
+      BLV Poker App
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community">
+  <h2>Join Community</h2>
+
+  <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0">Telegram</a>
+  <a class="btn" href="https://x.com/believers1pk?s=21">X</a>
+  <a class="btn" href="https://discord.gg/mXsUNsJvhk">Discord</a>
+</section>
+
+<!-- LOGO -->
+<section>
+  <h2>BLV Poker</h2>
+
+  <!-- REPLACE LINK BELOW -->
+  <img class="logo-img"
+  src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/blv-logo.png">
+
+  <p style="margin-top:20px;color:#aaa;">
     The Fire of Believers 🔥
   </p>
 </section>
 
+<!-- FOOTER -->
 <div class="footer">
-  © 2025 BLV Poker · Built for Believers · Long-Term Vision
+  © 2025 BLV Poker — Built for Believers
 </div>
 
 </body>
