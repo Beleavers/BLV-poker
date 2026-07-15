@@ -1,247 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>BLV Poker</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#020c08;
-  color:#fff;
-}
-a{
-  text-decoration:none;
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 20px;
-  background:#000;
-  position:fixed;
-  width:100%;
-  top:0;
-  border-bottom:1px solid #0f2f1e;
-}
-.logo{
-  color:#00ff88;
-  font-weight:bold;
-}
-.menu{
-  cursor:pointer;
-}
-.dropdown{
-  display:none;
-  position:absolute;
-  right:20px;
-  top:60px;
-  background:#071a12;
-  border:1px solid #00ff88;
-}
-.dropdown div{
-  padding:15px;
-}
-section{
-  padding:100px 20px;
-  text-align:center;
-  border-bottom:1px solid #111;
-}
-h1,h2{
-  color:#00ff88;
-}
-.btn{
-  display:inline-block;
-  margin:10px;
-  padding:12px 24px;
-  background:#00ff88;
-  color:#000;
-  border-radius:6px;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  max-width:1000px;
-  margin:40px auto;
-}
-.card{
-  background:#071a12;
-  padding:20px;
-  border-radius:10px;
-}
-.footer{
-  padding:30px;
-  text-align:center;
-  color:#777;
-}
-.logo-img{
-  max-width:280px;
-  border-radius:20px;
-  border:2px solid #00ff88;
-  box-shadow:0 0 50px rgba(0,255,136,0.8);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUMOR Protocol | $HMR on Solana</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        :root { --primary: #0A2540; --accent: #D4AF37; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:linear-gradient(135deg,#0A2540 0%,#000 100%); color:#E0E0E0; line-height:1.7; }
+        header { position:fixed; top:0; width:100%; background:rgba(10,37,64,0.95); backdrop-filter:blur(12px); z-index:1000; padding:1rem 5%; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(212,175,55,0.2); }
+        .logo { font-size:1.8rem; font-weight:700; color:var(--accent); }
+        nav a { color:#E0E0E0; text-decoration:none; margin-left:2rem; font-weight:500; }
+        .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background:linear-gradient(rgba(10,37,64,0.85),rgba(10,37,64,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover; }
+        .hero h1 { font-size:4.8rem; margin-bottom:1.5rem; }
+        .btn { background:var(--accent); color:#0A2540; padding:16px 40px; border-radius:50px; font-weight:600; cursor:pointer; font-size:1.1rem; transition:all 0.3s; }
+        .btn:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(212,175,55,0.4); }
+        section { padding:120px 5%; }
+        h2 { font-size:3rem; text-align:center; margin-bottom:4rem; color:white; }
+        .card { background:rgba(255,255,255,0.05); padding:2.8rem; border-radius:20px; border:1px solid rgba(212,175,55,0.2); }
+        .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
+    </style>
 </head>
-
 <body>
+    <header>
+        <div class="logo">HUMOR</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#dashboard">Mine</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#roadmap">Roadmap</a>
+        </nav>
+    </header>
 
-<!-- NAV -->
-<div class="nav">
-  <div class="logo">BLV Poker</div>
-  <div class="menu" onclick="toggle()">⋮</div>
-</div>
+    <section class="hero">
+        <div style="max-width:1000px;padding:0 20px;position:relative;">
+            <h1>HUMOR Protocol</h1>
+            <p style="font-size:1.6rem;max-width:700px;margin:0 auto 2rem;">Premium interaction-powered earning infrastructure on Solana. $HMR — Intelligent participation. Sustainable value.</p>
+            <button onclick="connectWallet()" class="btn">Connect Wallet</button>
+            <p style="margin-top:2rem;opacity:0.8;">Pre-TGE • Testnet Coming Soon</p>
+        </div>
+    </section>
 
-<div class="dropdown" id="drop">
-  <div>Pera Wallet · Defly Wallet</div>
-  <div>Buy $BLV (Soon)</div>
-</div>
+    <section id="about">
+        <h2>About HUMOR Protocol</h2>
+        <p style="max-width:900px;margin:0 auto 4rem;text-align:center;font-size:1.25rem;">
+            HUMOR Protocol is a professional Solana-based project focused on delivering long-term value through advanced on-chain interaction and mining mechanics. We prioritize transparency, sustainability, and real utility in the evolving crypto landscape.
+        </p>
+    </section>
 
-<script>
-function toggle(){
-  let d=document.getElementById("drop");
-  d.style.display=d.style.display==="block"?"none":"block";
-}
-</script>
+    <section id="features">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="card"><h3>Interaction Mining</h3><p>Earn $HMR by completing tasks, referrals, and meaningful contributions.</p></div>
+            <div class="card"><h3>Pre-TGE Rewards</h3><p>Accumulate points now and claim $HMR at Token Generation Event.</p></div>
+            <div class="card"><h3>Decentralized Governance</h3><p>$HMR holders participate in key protocol decisions.</p></div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section>
-  <h1>BLV Poker</h1>
-  <p>
-    A long-term poker ecosystem built for believers.
-  </p>
+    <section id="dashboard">
+        <h2>Mining Dashboard (Demo)</h2>
+        <div style="background:#111;padding:3rem;border-radius:20px;text-align:center;">
+            <p>Your Earned Points: <span id="points" style="font-size:3rem;color:var(--accent);font-weight:700;">12450</span></p>
+            <button onclick="mine()" class="btn" style="margin-top:1.5rem;">Mine Now (+100 pts)</button>
+        </div>
+    </section>
 
-  <a class="btn" href="#about">About</a>
-  <a class="btn" href="#roadmap">Roadmap</a>
-  <a class="btn" href="#whitepaper">Whitepaper</a>
-  <a class="btn" href="#community">Join</a>
-</section>
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <div class="features">
+            <div class="card"><strong>Total Supply:</strong> 1,000,000,000 $HMR</div>
+            <div class="card"><strong>Community/Earn:</strong> 10%</div>
+            <div class="card"><strong>Liquidity:</strong> 25%</div>
+            <div class="card"><strong>Team (vested):</strong> 20%</div>
+            <div class="card"><strong>Ecosystem:</strong> 25%</div>
+            <div class="card"><strong>Marketing:</strong> 20%</div>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About BLV</h2>
+    <section id="roadmap" style="background:#0A2540;">
+        <h2>Roadmap</h2>
+        <div style="max-width:900px;margin:0 auto;">
+            <h3>Phase 1: Foundation (Q3 2026)</h3><p>Token creation, website launch, community building, devnet testing.</p>
+            <h3>Phase 2: Testnet (Q4 2026)</h3><p>Advanced earning mechanics, partnerships, security audits.</p>
+            <h3>Phase 3: TGE & Mainnet (Q1 2027)</h3><p>Fair launch, claims activation, liquidity pools, governance.</p>
+            <h3>Phase 4: Growth (2027+)</h3><p>Staking, cross-chain features, ecosystem expansion.</p>
+        </div>
+    </section>
 
-  <div class="grid">
-    <div class="card">
-      ♠ Poker First<br><br>
-      Real gameplay and competition.
-    </div>
+    <footer style="background:#000;padding:4rem 5%;text-align:center;">
+        <p>&copy; 2026 HUMOR Protocol. All rights reserved.</p>
+        <div style="margin:2rem 0;">
+            <a href="https://x.com/humorxu" target="_blank" style="color:var(--accent);margin:0 15px;">X</a>
+            <a href="https://t.me/humorxu" target="_blank" style="color:var(--accent);margin:0 15px;">Telegram</a>
+            <a href="https://discord.gg/VTJWX7gAvW" target="_blank" style="color:var(--accent);margin:0 15px;">Discord</a>
+        </div>
+        <p>$HMR on Solana</p>
+    </footer>
 
-    <div class="card">
-      🌍 Community<br><br>
-      Built by believers.
-    </div>
-
-    <div class="card">
-      🚀 Future Token<br><br>
-      $BLV ecosystem coming.
-    </div>
-  </div>
-</section>
-
-<!-- PLAY -->
-<section>
-  <h2>Play Poker</h2>
-
-  <div class="grid">
-    <div class="card">
-      Download CLUBGG<br><br>
-      Create account<br><br>
-      Club ID: <b>101286</b>
-    </div>
-
-    <div class="card">
-      Compete<br><br>
-      Improve<br><br>
-      Grow with BLV
-    </div>
-  </div>
-</section>
-
-<!-- ROADMAP -->
-<section id="roadmap">
-  <h2>Roadmap</h2>
-
-  <div class="grid">
-    <div class="card">
-      Phase 1<br><br>
-      Community + Poker Launch
-    </div>
-
-    <div class="card">
-      Phase 2<br><br>
-      $BLV Token
-    </div>
-
-    <div class="card">
-      Phase 3<br><br>
-      BLV NFT
-    </div>
-
-    <div class="card">
-      Phase 4<br><br>
-      BLV Poker App
-    </div>
-  </div>
-</section>
-
-<!-- WHITEPAPER -->
-<section id="whitepaper">
-  <h2>Whitepaper</h2>
-
-  <p>
-    BLV Poker is a community-first ecosystem focused on long-term growth,
-    discipline, and real gameplay.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <strong>Vision</strong><br><br>
-      Build a sustainable poker platform powered by belief and consistency.
-    </div>
-
-    <div class="card">
-      <strong>$BLV Token</strong><br><br>
-      Future utility token supporting rewards and ecosystem growth.
-    </div>
-
-    <div class="card">
-      <strong>Utility</strong><br><br>
-      Poker rewards, NFTs, and community incentives.
-    </div>
-
-    <div class="card">
-      <strong>Philosophy</strong><br><br>
-      Long-term mindset over hype and quick gains.
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY -->
-<section id="community">
-  <h2>Join Community</h2>
-
-  <a class="btn" href="https://t.me/+JSxQoAv8exoyZmY0">Telegram</a>
-  <a class="btn" href="https://x.com/believers1pk?s=21">X</a>
-  <a class="btn" href="https://discord.gg/mXsUNsJvhk">Discord</a>
-</section>
-
-<!-- LOGO -->
-<section>
-  <h2>BLV Poker</h2>
-
-  <img src="blv-logo.png" class="logo-img">
-
-  <p style="margin-top:20px;color:#aaa;">
-    The Fire of Believers 🔥
-  </p>
-</section>
-
-<!-- FOOTER -->
-<div class="footer">
-  © 2025 BLV Poker — Built for Believers
-</div>
-
+    <script>
+        function connectWallet() {
+            alert("Phantom wallet connected! (Demo)");
+        }
+        function mine() {
+            let points = parseInt(document.getElementById('points').innerText);
+            document.getElementById('points').innerText = points + 100;
+        }
+    </script>
 </body>
 </html>
