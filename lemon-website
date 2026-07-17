@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$LEMON | Easily Trade on button.fun</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family:'Inter',sans-serif; margin:0; background:#0f0f0f; color:#fff; line-height:1.6; }
+        header { background:#1a1a1a; padding:1rem 5%; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
+        .logo { font-size:2rem; font-weight:700; color:#ffcc00; }
+        .hero { text-align:center; padding:120px 20px; background:linear-gradient(#1a1a1a,#0f0f0f); }
+        .hero h1 { font-size:4rem; margin-bottom:1rem; }
+        .ca { background:#222; padding:15px; border-radius:12px; font-family:monospace; word-break:break-all; max-width:700px; margin:20px auto; }
+        .btn { background:#ffcc00; color:#000; padding:16px 40px; border-radius:50px; font-weight:700; text-decoration:none; display:inline-block; margin:20px 10px; }
+        section { padding:80px 5%; }
+        .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+        footer { text-align:center; padding:3rem; background:#111; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">$LEMON</div>
+        <nav>
+            <a href="https://x.com/RobinhoodLemon" style="color:#fff;margin:0 15px;">X</a>
+            <a href="https://button.fun/t/0x4035576512f08ad5ec9a1f403f2249e2d4d297ac3a34d987c4215ca7db241431" style="color:#fff;margin:0 15px;">Trade on button.fun</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>$LEMON</h1>
+        <p style="font-size:1.5rem;max-width:700px;margin:0 auto;">Easily trade $LEMON on button.fun's new launchpad for Robinhood Eth Chain.</p>
+        <div class="ca">
+            <strong>CA:</strong> 0x44184a4367c7bf1a66077df89dced64b443db47d
+        </div>
+        <a href="https://button.fun/t/0x4035576512f08ad5ec9a1f403f2249e2d4d297ac3a34d987c4215ca7db241431" class="btn" target="_blank">Trade $LEMON Now</a>
+        <a href="https://x.com/RobinhoodLemon" class="btn" style="background:#fff;color:#000;" target="_blank">Follow on X</a>
+    </section>
+
+    <section>
+        <h2 style="text-align:center;">Why $LEMON?</h2>
+        <div class="features">
+            <div style="background:#1a1a1a;padding:2rem;border-radius:16px;">
+                <h3>Simple Trading</h3>
+                <p>Built for easy access on button.fun's Robinhood Eth Chain launchpad.</p>
+            </div>
+            <div style="background:#1a1a1a;padding:2rem;border-radius:16px;">
+                <h3>Community Driven</h3>
+                <p>Join the movement at @RobinhoodLemon on X.</p>
+            </div>
+            <div style="background:#1a1a1a;padding:2rem;border-radius:16px;">
+                <h3>Fast & Efficient</h3>
+                <p>Low fees and quick transactions on the new chain.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; $LEMON Community • Trade responsibly</p>
+        <p>CA: 0x44184a4367c7bf1a66077df89dced64b443db47d</p>
+    </footer>
+</body>
+</html>
